@@ -1,331 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Layout</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="sidebar">
-        <div class="logo">
-          <h2>Robo<span>tech</span></h2>
-        </div>
-        <div class="menu">
-          <ul>
-            <li>
-              <a href=""
-                ><i class="fa-regular fa-calendar-check"></i> My Schedule</a
-              >
-            </li>
-            <li class="active">
-              <a href=""><i class="fa-solid fa-house"></i> Dashboard</a>
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-envelope"></i> Message</a>
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-solid fa-diagram-project"></i> Projects</a
-              >
-            </li>
-            <li>
-              <a href=""
-                ><i class="fa-regular fa-star-half-stroke"></i> Grades</a
-              >
-            </li>
-          </ul>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --purple1:#E6E6FA;
+    --purple2:#b6b6f3;
+    --purple3:#afafe6;
+    --blue:#90b7f1;
+    --white:#f5f2f2;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+.container{
+    /* height: 100vh; */
+    display: flex;
+}
+.logo{
+    padding: 1rem;
+}
+.logo span{
+    color: var(--purple2);
+}
+.sidebar{
+    position: fixed;
+    width: 20%;
+    background-color: var(--purple1);
+}
+.sidebar a{
+    color: black;
+    text-decoration: none;
+}
+.sidebar li{
+    margin-left: .1rem;
+    padding: .6rem;
+    list-style-type: none;
+}
 
-          <hr />
-          <div class="menu2">
-            <ul>
-              <li>
-                <a href=""><i class="fa-solid fa-gear"></i> Settings</a>
-              </li>
-              <li>
-                <a href=""
-                  ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
-                >
-              </li>
-              <br /><br /><br /><br /><br />
-              <li>
-                <a href=""
-                  ><i class="fa-regular fa-circle-question"></i> Support</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="content">
-        <div class="card-row">
-          <div class="greeting">
-            <h2>Hello, Nupur!</h2>
-            <p>Have a good day!</p>
-          </div>
-          <form action="">
-            <input
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Search Here..."
-            />
-          </form>
-          <div class="profile">
-            <div class="userIcon">
-              <i class="fa-regular fa-user"></i>
-            </div>
-            <div class="userInfo">
-              <h3>Nupur Sikka</h3>
-              <p>Busy</p>
-            </div>
-            <div class="notification"><i class="fa-regular fa-bell"></i></div>
-          </div>
-        </div>
-        <div class="cardRow1">
-          <div class="card card1">
-            <div class="card-content">
-              <h3>Learn with Web Designer</h3>
-              <button class="btn">Register Now</button>
-            </div>
-            <img
-              src="https://img.freepik.com/free-vector/business-team-meeting-office-co-working-space_74855-6913.jpg?t=st=1737046992~exp=1737050592~hmac=9ca3901f7f753ab6ef4465b00f2e3768849b6eb49e225ec9bcc17b20d4e61049&w=2000"
-              alt=""
-            />
-          </div>
+.sidebar .active a{
+    color: white;
+}
 
-          <div class="card card2">
-            <h3>Days Report</h3>
-            <img src="card2 img.png" alt="" />
-          </div>
+.active{
+    background-color: var(--purple2);
+}
 
-          <div class="card card3">
-            <h3>Calender</h3>
+.sidebar .menu2{
+    margin-top: 1rem;
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 16rem;
+    text-align: justify;
+    background-color: #f5f2f2;
+    justify-content: space-evenly;
+}
 
-            <img
-              src="https://img.freepik.com/free-vector/appointment-booking-illustrated-theme_23-2148579429.jpg?t=st=1737089311~exp=1737092911~hmac=54dc6c8402327b1057ad47755efbcfe297fd87d56b7b7047f76868e511146635&w=740"
-              alt=""
-            />
-          </div>
-        </div>
+.card-row{
+    margin-top: 1rem;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+.card-row #search{
+    padding: 0.5rem;
+    border: .1em solid black;
+    border-radius: 1rem;
+    background-color: #fff;
+    /* background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 0.8rem center; */
+}
+.card-row .profile{
+    display: flex;
+    gap: .5rem;
+}
 
-        <div class="cardRow2">
-          <div class="card card4">
-            <h3>Progress</h3>
-            <img
-              src="https://img.freepik.com/free-vector/infographic-template-design_1262-92.jpg?t=st=1737089542~exp=1737093142~hmac=0c91528bf071d1adf3b9d507c16bc06a32e9bae9f02b12f608a0690b34274ae8&w=740"
-              alt=""
-            />
-          </div>
-          <div class="card card5">
-            <div class="cardHeading">
-              <h3>Teachers</h3>
-              <p>See All</p>
-            </div>
+.card-row .userIcon{
+    padding: 2px;
+}
 
-            <div class="t1">
-              <div class="tContent">
-                <div class="tuser">
-                  <img
-                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1737093303~exp=1737096903~hmac=cd6c8820f839e0c05e88c950d33fa67ec98d5d9106d09825eba8825a5bdc563f&w=740"
-                    alt=""
-                  />
-                  <div class="tName">Teacher1</div>
-                </div>
-                <div class="tIcon"><i class="fa-regular fa-envelope"></i></div>
-              </div>
-            </div>
-            <hr />
-            <div class="t2">
-              <div class="tContent">
-                <div class="tuser">
-                  <img
-                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1737093303~exp=1737096903~hmac=cd6c8820f839e0c05e88c950d33fa67ec98d5d9106d09825eba8825a5bdc563f&w=740"
-                    alt=""
-                  />
-                  <div class="tName">Teacher2</div>
-                </div>
+.notification{
+    background-color: var(--white);
+    padding: 2px;
+}
 
-                <div class="tIcon"><i class="fa-regular fa-envelope"></i></div>
-              </div>
-            </div>
-            <hr />
-            <div class="t3">
-              <div class="tContent">
-                <div class="tuser">
-                  <img
-                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1737093303~exp=1737096903~hmac=cd6c8820f839e0c05e88c950d33fa67ec98d5d9106d09825eba8825a5bdc563f&w=740"
-                    alt=""
-                  />
-                  <div class="tName">Teacher3</div>
-                </div>
-                <div class="tIcon"><i class="fa-regular fa-envelope"></i></div>
-              </div>
-            </div>
-            <hr />
-            <div class="t4">
-              <div class="tContent">
-                <div class="tuser">
-                  <img
-                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1737093303~exp=1737096903~hmac=cd6c8820f839e0c05e88c950d33fa67ec98d5d9106d09825eba8825a5bdc563f&w=740"
-                    alt=""
-                  />
-                  <div class="tName">Teacher4</div>
-                </div>
-                <div class="tIcon"><i class="fa-regular fa-envelope"></i></div>
-              </div>
-            </div>
-            <hr />
-          </div>
+.cardRow1, .cardRow2, .cardRow3{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
 
-          <div class="card card6">
-            <div class="cardHeading">
-              <h3>Events</h3>
-              <p>See All</p>
-            </div>
+.card{
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: auto;
+    width: 20rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.card img{
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 1rem;
+}
 
-              <div class="e1">
-                <div class="event">
-                  <div class="eventInfo">
-                    <h4>Event Name2</h4>
-                    <p>Lorem, ipsum dolor.</p>
-                  </div>
-                  <div class="eventIcon">
-                    <img src="notification.png" alt="notification">
-                  </div>
-                </div>
-                
-              </div>
-              <hr>
+.card .btn{
+    background-color: #fff;
+    border: .1rem solid black;
+    padding: .5rem;
+    border-radius: .5rem;
 
-              <div class="e2">
-                <div class="event">
-                  <div class="eventInfo">
-                    <h4>Event Name3</h4>
-                    <p>Lorem, ipsum dolor.</p>
-                  </div>
-                  <div class="eventIcon">
-                    <img src="notification.png" alt="notification">
-                  </div>
-                </div>
-                
-              </div>
-              <hr>
-              <div class="e3">
-                <div class="event">
-                  <div class="eventInfo">
-                    <h4>Event Name4</h4>
-                    <p>Lorem, ipsum dolor.</p>
-                  </div>
-                  <div class="eventIcon">
-                    <img src="notification.png" alt="notification">
-                  </div>
-                </div>
-                
-              </div>
-              <hr>
-              <div class="e4">
-                <div class="event">
-                  <div class="eventInfo">
-                    <h4>Event Name5</h4>
-                    <p>Lorem, ipsum dolor.</p>
-                  </div>
-                  <div class="eventIcon">
-                    <img src="notification.png" alt="notification">
-                  </div>
-                </div>
-                
-              </div>
-              <hr>
+    &:hover{
+        color: var(--white);
+        background-color: var(--blue);
+        border: none;
+    }
+}
+.card9{
+    height: 15rem;
+}
 
+.card5,.card4{
+    height: 22rem;
+}
+.cardHeading{
+    display: flex;
+    justify-content: space-between;
+}
 
-              <div class="e5">
-                <div class="event">
-                  <div class="eventInfo">
-                    <h4>Event Name5</h4>
-                    <p>Lorem, ipsum dolor.</p>
-                  </div>
-                  <div class="eventIcon">
-                    <img src="notification.png" alt="notification">
-                  </div>
-                </div>
-                
-              </div>
-              <hr>
+.tContent{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
 
+.tContent p, .cardHeading p{
+    font-style: .5rem;
+    color: gray;
+}
 
+.tuser{
+    gap: 1rem;
+    display: flex;
+}
+.tuser img{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+.t1 .tIcon{
+    color: teal;
+}
+.t2 .tIcon{
+    color: cadetblue;
+}
+.t3 .tIcon{
+    color: goldenrod;
+}
+.t4 .tIcon{
+    color: palevioletred;
+}
 
-          </div>
-        </div>
+progress{
+    height: 1rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+#bar1{
+    background-color: var(--blue);
+}
 
-        <div class="cardRow3">
-          <div class="card card7">
-            <div class="tContent">
-              <h3>Ratings</h3>
-              <p>Learn More</p>
-            </div>
-            <img src="https://img.freepik.com/free-vector/pencil-rising-graph_23-2147501608.jpg?t=st=1737095984~exp=1737099584~hmac=1adabd8e2839aea7c56dd5b7df9a0a66fc4badf46611a619a4287a0f8d0e934c&w=740" alt="">
-
-          </div>
-
-          <div class="card card8">
-            <div class="tContent">
-              <h3>Ratings</h3>
-              <p>Learn More</p>
-            </div>
-            <img src="bar graph.png" alt="">
-          </div>
-
-          <div class="card card9">
-            <div class="tContent">
-              <h3>Homework</h3>
-              <p>Learn More</p>
-            </div>
-            <div class="progress">
-              <h4>C</h4>
-              <progress id="bar1" value="32" max="100" class="bar"> 32% </progress>
-              <div class="bar bar1" ></div>
-            </div>
-
-            <div class="progress">
-              <h4>C++</h4>
-              <progress id="bar1" value="60" max="100" class="bar"> 32% </progress>
-              <div class="bar bar1" ></div>
-            </div>
-
-            <!-- <div class="progress">
-              <h4>Python</h4>
-              <progress id="bar1" value="55" max="100" class="bar"> 32% </progress>
-              <div class="bar bar1" ></div>
-            </div>
-            <div class="progress">
-              <h4>C</h4>
-              <progress id="bar1" value="39" max="100" class="bar"> 32% </progress>
-              <div class="bar bar1" ></div>
-            </div>
-
-            <div class="progress">
-              <h4>C++</h4>
-              <progress id="bar1" value="68" max="100" class="bar"> 32% </progress>
-              <div class="bar bar1" ></div>
-            </div>
-
-            <div class="progress">
-              <h4>Python</h4>
-              <progress id="bar1" value="72" max="100" class="bar"> 32% </progress>
-              <div class="bar bar1" ></div>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+.eventIcon img{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+.event{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.eventInfo p{
+    font-size: .9rem;
+    color: gray;
+}
